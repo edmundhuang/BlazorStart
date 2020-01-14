@@ -1,0 +1,39 @@
+﻿<BSNavbar IsExpand="true" IsDark="true" Color="Color.Dark" IsFixedTop="true">
+    <BSNavbarBrand Href="#">Blazor CRUD</BSNavbarBrand>
+    <BSNavbarToggler @onclick="openNav" />
+    <BSCollapse IsOpen="@IsOpen" IsNavbar="true">
+        <BSNav IsList="true" Class="mr-auto" IsNavbar="true">
+            <BSNavItem>
+                <BSNavLink href="/" @onclick="closeNav">Home</BSNavLink>
+            </BSNavItem>
+            <BSNavItem>
+                <BSNavLink href="/dashboard" @onclick="closeNav">Dashboard</BSNavLink>
+            </BSNavItem>
+            <BSNavItem>
+                <BSNavLink href="/patient" @onclick="closeNav">Patients</BSNavLink>
+            </BSNavItem>
+            <BSNavItem>
+                <BSNavLink href="/organization" @onclick="closeNav">Organizations</BSNavLink>
+            </BSNavItem>
+            <BSNavItem>
+                <BSNavLink href="/user" @onclick="closeNav">Users</BSNavLink>
+            </BSNavItem>
+        </BSNav>
+    </BSCollapse>
+</BSNavbar>
+
+@code {
+    private bool IsOpen { get; set; } = false;
+
+    void openNav(MouseEventArgs e)
+    {
+        IsOpen = !IsOpen;
+        StateHasChanged();
+    }
+
+    void closeNav(MouseEventArgs e)
+    {
+        IsOpen = !IsOpen;
+        StateHasChanged();
+    }
+}
