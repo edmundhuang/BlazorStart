@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove=".template.config\**" />
+    <Compile Remove="wwwroot\css\font\**" />
     <Content Remove=".template.config\**" />
+    <Content Remove="wwwroot\css\font\**" />
     <EmbeddedResource Remove=".template.config\**" />
+    <EmbeddedResource Remove="wwwroot\css\font\**" />
     <None Remove=".template.config\**" />
+    <None Remove="wwwroot\css\font\**" />
   </ItemGroup>
 
   <ItemGroup>
