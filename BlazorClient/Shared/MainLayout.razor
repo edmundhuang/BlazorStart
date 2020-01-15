@@ -1,6 +1,12 @@
 ﻿@inherits LayoutComponentBase
 @inject Microsoft.AspNetCore.Components.NavigationManager UriHelper
-<ToastContainer />
+@using Blazored.Toast.Configuration
+
+<BlazoredToasts Position="ToastPosition.BottomRight"
+                Timeout="10"
+                SuccessClass="success-toast-override"
+                SuccessIconClass="fa fa-thumbs-up"
+                ErrorIconClass="fa fa-bug" />
 
 <div>
     <NavMenu />

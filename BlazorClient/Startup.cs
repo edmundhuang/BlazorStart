@@ -1,6 +1,6 @@
+using Blazored.Toast;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Sotsera.Blazor.Toaster.Core.Models;
 
 namespace BlazorClient
 {
@@ -8,12 +8,7 @@ namespace BlazorClient
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddToaster(config =>
-            {
-                config.PositionClass = Defaults.Classes.Position.TopRight;
-                config.PreventDuplicates = true;
-                config.NewestOnTop = false;
-            });
+            services.AddBlazoredToast();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
